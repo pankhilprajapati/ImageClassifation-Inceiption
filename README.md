@@ -14,10 +14,10 @@ both with non sudo installations
 
 ```
 
-git clone the https://github.com/pankhilprajapati/ImageClassifation-Inceiption.git
+git clone the https://github.com/pankhilprajapati/ImageClassifation-Inception.git
 
 cd 
-ImageClassifation-Inceiption 
+ImageClassifation-Inception 
 
 docker-compose build
 
