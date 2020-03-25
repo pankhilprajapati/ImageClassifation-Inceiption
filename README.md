@@ -23,4 +23,6 @@ docker-compose build
 
 docker-compose up 
 
+server will be running at localhost:5000
+
 ```
