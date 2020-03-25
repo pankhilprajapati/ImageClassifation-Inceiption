@@ -11,7 +11,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
-client = MongoClient(mongodb://db:27017)
+client = MongoClient("mongodb://db:27017")
 db = client.ImageR
 users = db['Users']
 
@@ -69,7 +69,7 @@ def verifyCred(username, password):
     if not UserExist(username):
         return genReturnDict(301,"Invalid username"), True
     
-    correct_pw = verify_pw(username, password):
+    correct_pw = verify_pw(username, password)
     if not correct_pw:
         return genReturnDict(302, "Invalid Password"), True
     return None, False,
@@ -88,7 +88,7 @@ class Classify(Resource):
         
 
         tokens = users.find({"Username":username})[0]["Token"]
-        if token<=0:
+        if tokens<=0:
             return jsonify(genReturnDict(303, "Not Enough token"))
 
         r = requests.get(url=url)
